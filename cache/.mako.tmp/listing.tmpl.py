@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 9
-_modified_time = 1401866866.299
+_magic_number = 10
+_modified_time = 1402589123.106
 _enable_loop = True
 _template_filename = u'd:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\bootstrap3\\templates/listing.tmpl'
 _template_uri = u'listing.tmpl'
@@ -19,7 +19,6 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    # SOURCE LINE 3
     ns = runtime.TemplateNamespace(u'ui', context._clean_inheritance_tokens(), templateuri=u'crumbs.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'ui')] = ns
 
@@ -40,15 +39,12 @@ def render_body(context,**pageargs):
         ui = _mako_get_namespace(context, 'ui')
         crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         __M_writer = context.writer()
-        # SOURCE LINE 2
         __M_writer(u'\n')
-        # SOURCE LINE 3
         __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        # SOURCE LINE 17
         __M_writer(u'\n')
         return ''
     finally:
@@ -68,32 +64,23 @@ def render_content(context,**pageargs):
         ui = _mako_get_namespace(context, 'ui')
         crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         __M_writer = context.writer()
-        # SOURCE LINE 4
         __M_writer(u'\n')
-        # SOURCE LINE 5
         __M_writer(unicode(ui.bar(crumbs)))
         __M_writer(u'\n<ul class="list-unstyled">\n')
-        # SOURCE LINE 7
         for name in folders:
-            # SOURCE LINE 8
             __M_writer(u'    <li><a href="')
             __M_writer(unicode(name))
             __M_writer(u'"><i class="icon-folder-open"></i> ')
             __M_writer(unicode(name))
             __M_writer(u'</a>\n')
-        # SOURCE LINE 10
         for name in files:
-            # SOURCE LINE 11
             __M_writer(u'    <li><a href="')
             __M_writer(unicode(name))
             __M_writer(u'.html"><i class="icon-file"></i> ')
             __M_writer(unicode(name))
             __M_writer(u'</a>\n')
-        # SOURCE LINE 13
         __M_writer(u'</ul>\n')
-        # SOURCE LINE 14
         if code:
-            # SOURCE LINE 15
             __M_writer(u'    ')
             __M_writer(unicode(code))
             __M_writer(u'\n')
@@ -102,3 +89,8 @@ def render_content(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+"""
+__M_BEGIN_METADATA
+{"source_encoding": "utf-8", "line_map": {"22": 3, "28": 0, "42": 2, "43": 3, "48": 17, "54": 4, "67": 4, "68": 5, "69": 5, "70": 7, "71": 8, "72": 8, "73": 8, "74": 8, "75": 8, "76": 10, "77": 11, "78": 11, "79": 11, "80": 11, "81": 11, "82": 13, "83": 14, "84": 15, "85": 15, "86": 15, "92": 86}, "uri": "listing.tmpl", "filename": "d:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\bootstrap3\\templates/listing.tmpl"}
+__M_END_METADATA
+"""

@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 9
-_modified_time = 1401866866.37
+_magic_number = 10
+_modified_time = 1402589123.219
 _enable_loop = True
 _template_filename = u'd:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\base\\templates/tag.tmpl'
 _template_uri = u'tag.tmpl'
@@ -40,19 +40,16 @@ def render_body(context,**pageargs):
         len = context.get('len', UNDEFINED)
         date_format = context.get('date_format', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 2
         __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_head'):
             context['self'].extra_head(**pageargs)
         
 
-        # SOURCE LINE 11
         __M_writer(u'\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        # SOURCE LINE 32
         __M_writer(u'\n')
         return ''
     finally:
@@ -73,32 +70,22 @@ def render_content(context,**pageargs):
         tag = context.get('tag', UNDEFINED)
         _link = context.get('_link', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 13
         __M_writer(u'\n        <!--Body content-->\n        <div class="postbox">\n        <h1>')
-        # SOURCE LINE 16
         __M_writer(unicode(title))
         __M_writer(u'</h1>\n')
-        # SOURCE LINE 17
         if len(translations) > 1:
-            # SOURCE LINE 18
             for language in translations:
-                # SOURCE LINE 19
                 __M_writer(u'                <a href="')
                 __M_writer(unicode(_link(kind + "_rss", tag, language)))
                 __M_writer(u'">RSS (')
                 __M_writer(unicode(language))
                 __M_writer(u')</a>&nbsp;\n')
-            # SOURCE LINE 21
         else:
-            # SOURCE LINE 22
             __M_writer(u'            <a href="')
             __M_writer(unicode(_link(kind + "_rss", tag)))
             __M_writer(u'">RSS</a>\n')
-        # SOURCE LINE 24
         __M_writer(u'        <br>\n        <ul class="unstyled">\n')
-        # SOURCE LINE 26
         for post in posts:
-            # SOURCE LINE 27
             __M_writer(u'            <li><a href="')
             __M_writer(unicode(post.permalink()))
             __M_writer(u'">[')
@@ -106,7 +93,6 @@ def render_content(context,**pageargs):
             __M_writer(u'] ')
             __M_writer(unicode(post.title()))
             __M_writer(u'</a>\n')
-        # SOURCE LINE 29
         __M_writer(u'        </ul>\n        </div>\n        <!--End of body content-->\n')
         return ''
     finally:
@@ -124,13 +110,9 @@ def render_extra_head(context,**pageargs):
         tag = context.get('tag', UNDEFINED)
         len = context.get('len', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 3
         __M_writer(u'\n')
-        # SOURCE LINE 4
         if len(translations) > 1:
-            # SOURCE LINE 5
             for language in translations:
-                # SOURCE LINE 6
                 __M_writer(u'            <link rel="alternate" type="application/rss+xml" type="application/rss+xml" title="RSS for ')
                 __M_writer(unicode(kind))
                 __M_writer(u' ')
@@ -140,9 +122,7 @@ def render_extra_head(context,**pageargs):
                 __M_writer(u')" href="')
                 __M_writer(unicode(_link(kind + "_rss", tag, language)))
                 __M_writer(u'">\n')
-            # SOURCE LINE 8
         else:
-            # SOURCE LINE 9
             __M_writer(u'        <link rel="alternate" type="application/rss+xml" type="application/rss+xml" title="RSS for ')
             __M_writer(unicode(kind))
             __M_writer(u' ')
@@ -155,3 +135,8 @@ def render_extra_head(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+"""
+__M_BEGIN_METADATA
+{"source_encoding": "utf-8", "line_map": {"128": 9, "129": 9, "130": 9, "131": 9, "132": 9, "138": 132, "26": 0, "43": 2, "48": 11, "53": 32, "59": 13, "73": 13, "74": 16, "75": 16, "76": 17, "77": 18, "78": 19, "79": 19, "80": 19, "81": 19, "82": 19, "83": 21, "84": 22, "85": 22, "86": 22, "87": 24, "88": 26, "89": 27, "90": 27, "91": 27, "92": 27, "93": 27, "94": 27, "95": 27, "96": 29, "102": 3, "113": 3, "114": 4, "115": 5, "116": 6, "117": 6, "118": 6, "119": 6, "120": 6, "121": 6, "122": 6, "123": 6, "124": 6, "125": 8, "126": 9, "127": 9}, "uri": "tag.tmpl", "filename": "d:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\base\\templates/tag.tmpl"}
+__M_END_METADATA
+"""

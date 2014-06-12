@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 9
-_modified_time = 1401866866.18
+_magic_number = 10
+_modified_time = 1402589122.962
 _enable_loop = True
 _template_filename = u'd:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\bootstrap3\\templates/list.tmpl'
 _template_uri = 'list.tmpl'
@@ -32,13 +32,11 @@ def render_body(context,**pageargs):
         items = context.get('items', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 2
         __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        # SOURCE LINE 14
         __M_writer(u'\n')
         return ''
     finally:
@@ -53,23 +51,23 @@ def render_content(context,**pageargs):
         items = context.get('items', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 3
         __M_writer(u'\n        <!--Body content-->\n        <div class="postbox">\n        <h1>')
-        # SOURCE LINE 6
         __M_writer(unicode(title))
         __M_writer(u'</h1>\n        <ul class="list-unstyled">\n')
-        # SOURCE LINE 8
         for text, link in items:
-            # SOURCE LINE 9
             __M_writer(u'            <li><a href="')
             __M_writer(unicode(link))
             __M_writer(u'">')
             __M_writer(unicode(text))
             __M_writer(u'</a>\n')
-        # SOURCE LINE 11
         __M_writer(u'        </ul>\n        </div>\n        <!--End of body content-->\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
 
 
+"""
+__M_BEGIN_METADATA
+{"source_encoding": "utf-8", "line_map": {"35": 2, "69": 63, "40": 14, "46": 3, "61": 9, "54": 3, "55": 6, "56": 6, "57": 8, "26": 0, "59": 9, "60": 9, "58": 9, "62": 9, "63": 11}, "uri": "list.tmpl", "filename": "d:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\bootstrap3\\templates/list.tmpl"}
+__M_END_METADATA
+"""

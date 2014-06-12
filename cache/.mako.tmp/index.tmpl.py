@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 9
-_modified_time = 1401866866.281
+_magic_number = 10
+_modified_time = 1402589122.984
 _enable_loop = True
 _template_filename = u'd:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\base\\templates/index.tmpl'
 _template_uri = u'index.tmpl'
@@ -19,11 +19,9 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    # SOURCE LINE 3
     ns = runtime.TemplateNamespace(u'comments', context._clean_inheritance_tokens(), templateuri=u'comments_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'comments')] = ns
 
-    # SOURCE LINE 2
     ns = runtime.TemplateNamespace(u'helper', context._clean_inheritance_tokens(), templateuri=u'index_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'helper')] = ns
 
@@ -44,15 +42,12 @@ def render_body(context,**pageargs):
         index_teasers = context.get('index_teasers', UNDEFINED)
         __M_writer = context.writer()
         __M_writer(u'\n')
-        # SOURCE LINE 3
         __M_writer(u'\n')
-        # SOURCE LINE 4
         __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        # SOURCE LINE 22
         __M_writer(u'\n')
         return ''
     finally:
@@ -71,43 +66,31 @@ def render_content(context,**pageargs):
             return render_content(context)
         index_teasers = context.get('index_teasers', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 5
         __M_writer(u'\n')
-        # SOURCE LINE 6
         for post in posts:
-            # SOURCE LINE 7
             __M_writer(u'        <div class="postbox">\n        <h1><a href="')
-            # SOURCE LINE 8
             __M_writer(unicode(post.permalink()))
             __M_writer(u'">')
             __M_writer(unicode(post.title()))
             __M_writer(u'</a>\n        <small>&nbsp;&nbsp;\n             ')
-            # SOURCE LINE 10
             __M_writer(unicode(messages("Posted")))
             __M_writer(u': <time class="published" datetime="')
             __M_writer(unicode(post.date.isoformat()))
             __M_writer(u'">')
             __M_writer(unicode(post.formatted_date(date_format)))
             __M_writer(u'</time>\n        </small></h1>\n        <hr>\n        ')
-            # SOURCE LINE 13
             __M_writer(unicode(post.text(teaser_only=index_teasers)))
             __M_writer(u'\n')
-            # SOURCE LINE 14
             if not post.meta('nocomments'):
-                # SOURCE LINE 15
                 __M_writer(u'            ')
                 __M_writer(unicode(comments.comment_link(post.permalink(), post.base_path)))
                 __M_writer(u'\n')
-            # SOURCE LINE 17
             __M_writer(u'        </div>\n')
-        # SOURCE LINE 19
         __M_writer(u'    ')
         __M_writer(unicode(helper.html_pager()))
         __M_writer(u'\n    ')
-        # SOURCE LINE 20
         __M_writer(unicode(comments.comment_link_script()))
         __M_writer(u'\n\t')
-        # SOURCE LINE 21
         __M_writer(unicode(helper.mathjax_script(posts)))
         __M_writer(u'\n')
         return ''
@@ -115,3 +98,8 @@ def render_content(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+"""
+__M_BEGIN_METADATA
+{"source_encoding": "utf-8", "line_map": {"22": 3, "25": 2, "31": 0, "44": 2, "45": 3, "46": 4, "51": 22, "57": 5, "69": 5, "70": 6, "71": 7, "72": 8, "73": 8, "74": 8, "75": 8, "76": 10, "77": 10, "78": 10, "79": 10, "80": 10, "81": 10, "82": 13, "83": 13, "84": 14, "85": 15, "86": 15, "87": 15, "88": 17, "89": 19, "90": 19, "91": 19, "92": 20, "93": 20, "94": 21, "95": 21, "101": 95}, "uri": "index.tmpl", "filename": "d:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\base\\templates/index.tmpl"}
+__M_END_METADATA
+"""

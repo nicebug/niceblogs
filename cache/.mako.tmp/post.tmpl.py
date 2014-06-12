@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 9
-_modified_time = 1401866866.31
+_magic_number = 10
+_modified_time = 1402589123.129
 _enable_loop = True
 _template_filename = u'd:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\bootstrap3\\templates/post.tmpl'
 _template_uri = u'post.tmpl'
@@ -19,11 +19,9 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    # SOURCE LINE 3
     ns = runtime.TemplateNamespace(u'comments', context._clean_inheritance_tokens(), templateuri=u'comments_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'comments')] = ns
 
-    # SOURCE LINE 2
     ns = runtime.TemplateNamespace(u'helper', context._clean_inheritance_tokens(), templateuri=u'post_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'helper')] = ns
 
@@ -47,27 +45,22 @@ def render_body(context,**pageargs):
         post = context.get('post', UNDEFINED)
         __M_writer = context.writer()
         __M_writer(u'\n')
-        # SOURCE LINE 3
         __M_writer(u'\n')
-        # SOURCE LINE 4
         __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_head'):
             context['self'].extra_head(**pageargs)
         
 
-        # SOURCE LINE 10
         __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        # SOURCE LINE 28
         __M_writer(u'\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'sourcelink'):
             context['self'].sourcelink(**pageargs)
         
 
-        # SOURCE LINE 36
         __M_writer(u'\n')
         return ''
     finally:
@@ -85,37 +78,27 @@ def render_content(context,**pageargs):
             return render_content(context)
         post = context.get('post', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 11
         __M_writer(u'\n    <div class="postbox">\n    ')
-        # SOURCE LINE 13
         __M_writer(unicode(helper.html_title()))
         __M_writer(u'\n    <hr>\n    <small>\n        ')
-        # SOURCE LINE 16
         __M_writer(unicode(messages("Posted")))
         __M_writer(u': <time class="published" datetime="')
         __M_writer(unicode(post.date.isoformat()))
         __M_writer(u'">')
         __M_writer(unicode(post.formatted_date(date_format)))
         __M_writer(u'</time>\n        ')
-        # SOURCE LINE 17
         __M_writer(unicode(helper.html_translations(post)))
         __M_writer(u'\n        ')
-        # SOURCE LINE 18
         __M_writer(unicode(helper.html_tags(post)))
         __M_writer(u'\n    </small>\n    <hr>\n    ')
-        # SOURCE LINE 21
         __M_writer(unicode(post.text()))
         __M_writer(u'\n    ')
-        # SOURCE LINE 22
         __M_writer(unicode(helper.html_pager(post)))
         __M_writer(u'\n')
-        # SOURCE LINE 23
         if not post.meta('nocomments'):
-            # SOURCE LINE 24
             __M_writer(u'        ')
             __M_writer(unicode(comments.comment_form(post.permalink(absolute=True), post.title(), post.base_path)))
             __M_writer(u'\n')
-        # SOURCE LINE 26
         __M_writer(u'    ')
         __M_writer(unicode(helper.mathjax_script(post)))
         __M_writer(u'\n    </div>\n')
@@ -132,14 +115,10 @@ def render_extra_head(context,**pageargs):
         post = context.get('post', UNDEFINED)
         helper = _mako_get_namespace(context, 'helper')
         __M_writer = context.writer()
-        # SOURCE LINE 5
         __M_writer(u'\n')
-        # SOURCE LINE 6
         __M_writer(unicode(helper.twitter_card_information(post)))
         __M_writer(u'\n')
-        # SOURCE LINE 7
         if post.meta('keywords'):
-            # SOURCE LINE 8
             __M_writer(u'    <meta name="keywords" content="')
             __M_writer(filters.html_escape(unicode(post.meta('keywords'))))
             __M_writer(u'"/>\n')
@@ -156,13 +135,9 @@ def render_sourcelink(context,**pageargs):
         post = context.get('post', UNDEFINED)
         messages = context.get('messages', UNDEFINED)
         __M_writer = context.writer()
-        # SOURCE LINE 30
         __M_writer(u'\n')
-        # SOURCE LINE 31
         if not post.meta('password'):
-            # SOURCE LINE 32
             __M_writer(u'    <li>\n    <a href="')
-            # SOURCE LINE 33
             __M_writer(unicode(post.source_link()))
             __M_writer(u'" id="sourcelink">')
             __M_writer(unicode(messages("Source")))
@@ -172,3 +147,8 @@ def render_sourcelink(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+"""
+__M_BEGIN_METADATA
+{"source_encoding": "utf-8", "line_map": {"130": 30, "150": 144, "138": 30, "139": 31, "140": 32, "141": 33, "142": 33, "143": 33, "144": 33, "22": 3, "25": 2, "31": 0, "47": 2, "48": 3, "49": 4, "54": 10, "59": 28, "64": 36, "70": 11, "81": 11, "82": 13, "83": 13, "84": 16, "85": 16, "86": 16, "87": 16, "88": 16, "89": 16, "90": 17, "91": 17, "92": 18, "93": 18, "94": 21, "95": 21, "96": 22, "97": 22, "98": 23, "99": 24, "100": 24, "101": 24, "102": 26, "103": 26, "104": 26, "110": 5, "118": 5, "119": 6, "120": 6, "121": 7, "122": 8, "123": 8, "124": 8}, "uri": "post.tmpl", "filename": "d:\\Python27\\lib\\site-packages\\nikola\\data\\themes\\bootstrap3\\templates/post.tmpl"}
+__M_END_METADATA
+"""
