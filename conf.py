@@ -7,7 +7,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "nicebug"
-BLOG_TITLE = "一个2BQA"
+BLOG_TITLE = "Go Go"
 # This is the main URL for your site. It will be used
 # in a prominent link
 SITE_URL = "http://nicebug.github.io/"
@@ -62,6 +62,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/archive.html', 'Archives'),
         ('/categories/index.html', 'Tags'),
+        ('/posts/aboutme.html', 'About'),
         ('/rss.xml', 'RSS'),
     ),
 }
@@ -92,10 +93,12 @@ NAVIGATION_LINKS = {
 #
 
 POSTS = (
+    ("posts/*.md", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.rst", "posts", "post.tmpl"),
 )
 PAGES = (
+    ("stories/*.md", "posts", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
     ("stories/*.rst", "stories", "story.tmpl"),
 )
@@ -114,8 +117,8 @@ PAGES = (
 # 'markdown' is MarkDown
 # 'html' assumes the file is html and just copies it
 COMPILERS = {
-    "rest": ('.txt', '.rst'),
     "markdown": ('.md', '.mdown', '.markdown'),
+    "rest": ('.txt', '.rst'),
     "textile": ('.textile',),
     "txt2tags": ('.t2t',),
     "bbcode": ('.bb',),
