@@ -158,7 +158,7 @@ COMPILERS = {
 # INDEX_PATH = ""
 
 # Create per-month archives instead of per-year
-# CREATE_MONTHLY_ARCHIVE = False
+CREATE_MONTHLY_ARCHIVE = True
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
@@ -396,11 +396,11 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # What MarkDown extensions to enable?
 # You will also get gist, nikola and podcast because those are
 # done in the code, hope you don't mind ;-)
-# MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite']
+MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite']
 
 # Social buttons. This is sample code for AddThis (which was the default for a
 # long time). Insert anything you want here, or even make it empty.
-# SOCIAL_BUTTONS_CODE = """
+#SOCIAL_BUTTONS_CODE = """
 # <!-- Social buttons -->
 # <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 # <a class="addthis_button_more">Share</a>
