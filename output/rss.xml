@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Go Go</title><link>http://nicebug.github.io/</link><description>唯一的一块净土.</description><atom:link href="http://nicebug.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Fri, 06 Feb 2015 16:45:35 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>learning web.py</title><link>http://nicebug.github.io/posts/learning-webpy.html</link><dc:creator>nicebug</dc:creator><description>&lt;div&gt;&lt;h3&gt;web.py学习笔记&lt;/h3&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Go Go</title><link>http://nicebug.github.io/</link><description>唯一的一块净土.</description><atom:link href="http://nicebug.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 18 Mar 2015 15:18:23 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>learning web.py</title><link>http://nicebug.github.io/posts/learning-webpy.html</link><dc:creator>nicebug</dc:creator><description>&lt;div&gt;&lt;h3&gt;web.py学习笔记&lt;/h3&gt;
 &lt;p&gt;由于后台的几个需求，需要给测试同学构造gm指令以方便测试，思来想去还是搭建个快速的webserver来方便测试同学，django太庞大，tornado不大熟悉，别人介绍了下&lt;a href="http://webpy.org/"&gt;web.py&lt;/a&gt;，而且也不需要安装一大堆的第三方依赖库(原谅楼主有时候在服务器上不喜欢装第三方库的臭毛病吧)，甚至把web.py打包后都不需要额外安装任何东西。简单看了下web.py的文档，感觉还是入手还是比较容易。&lt;/p&gt;
-&lt;p&gt;工程文档目录结构：
-main
-|---- conf (工程配置文件)
-|---- static (js，图片等)
-|---- template (html文件)
-|---- web (web.py的库文件)
-|---- config.py (目录，密码等配置)
-|---- index.py (路由文件)&lt;/p&gt;
+&lt;p&gt;工程文档目录结构：&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;main
+    |---- conf (工程配置文件)
+    |---- static (js，图片等)
+    |---- template (html文件)
+    |---- web (web.py的库文件)
+    |---- config.py (目录，密码等配置)
+    |---- index.py (路由文件)
+&lt;/pre&gt;
+
+
 &lt;p&gt;接着就可以开始coding，在web.py中需要指定url路由,当url请求中包含相应关键字时则跳转到相应的class中进行处理。&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;urls&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="s"&gt;'/favicon.ico'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"Ico"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -193,5 +196,5 @@ markdown 3&lt;/p&gt;
 &lt;li&gt;重新review下算法，目标：《数据结构与算法分析-C语音描述》所有习题必须在纸质版上完成&lt;/li&gt;
 &lt;li&gt;巩固下python，目标：《python源码剖析》？或者将算法分析使用python来实现一次？&lt;/li&gt;
 &lt;/ul&gt;&lt;/div&gt;</description><category>日常生活</category><guid>http://nicebug.github.io/posts/plan-in-201406-201412.html</guid><pubDate>Wed, 04 Jun 2014 12:38:17 GMT</pubDate></item><item><title>find all same file and replace then</title><link>http://nicebug.github.io/posts/find-all-same-file-and-replace-then.html</link><dc:creator>nicebug</dc:creator><description>&lt;div&gt;&lt;p&gt;在linux下查找同名文件，并进行替换的一小点总结，find命令超过我的预期。&lt;/p&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="http://nicebug.github.io/posts/find-all-same-file-and-replace-then.html#rest_code_cdfee2598de14ed79c666e50df5d64ce-1"&gt;1&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_cdfee2598de14ed79c666e50df5d64ce-1"&gt;&lt;/a&gt;find &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;WORK_HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; -name &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; -type f &lt;span class="p"&gt;|&lt;/span&gt; xargs -i cp -rf &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="http://nicebug.github.io/posts/find-all-same-file-and-replace-then.html#rest_code_15fda45228ca41c49ce6040c31006507-1"&gt;1&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_15fda45228ca41c49ce6040c31006507-1"&gt;&lt;/a&gt;find &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;WORK_HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; -name &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; -type f &lt;span class="p"&gt;|&lt;/span&gt; xargs -i cp -rf &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;filename&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</description><guid>http://nicebug.github.io/posts/find-all-same-file-and-replace-then.html</guid><pubDate>Thu, 08 May 2014 17:56:09 GMT</pubDate></item><item><title>nikola 6.4</title><link>http://nicebug.github.io/posts/nikola-64.html</link><dc:creator>nicebug</dc:creator><description>&lt;p&gt;nikola安装过程中出现unicode error，查到原因是阿里旺旺在注册中建立了一个中文后缀名文件，无语，删除之就解决了。&lt;/p&gt;</description><guid>http://nicebug.github.io/posts/nikola-64.html</guid><pubDate>Mon, 28 Apr 2014 13:16:04 GMT</pubDate></item></channel></rss>

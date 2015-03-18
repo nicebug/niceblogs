@@ -105,14 +105,17 @@
     <div>
 <h3>web.py学习笔记</h3>
 <p>由于后台的几个需求，需要给测试同学构造gm指令以方便测试，思来想去还是搭建个快速的webserver来方便测试同学，django太庞大，tornado不大熟悉，别人介绍了下<a href="http://webpy.org/">web.py</a>，而且也不需要安装一大堆的第三方依赖库(原谅楼主有时候在服务器上不喜欢装第三方库的臭毛病吧)，甚至把web.py打包后都不需要额外安装任何东西。简单看了下web.py的文档，感觉还是入手还是比较容易。</p>
-<p>工程文档目录结构：
-main
-|---- conf (工程配置文件)
-|---- static (js，图片等)
-|---- template (html文件)
-|---- web (web.py的库文件)
-|---- config.py (目录，密码等配置)
-|---- index.py (路由文件)</p>
+<p>工程文档目录结构：</p>
+<pre class="code literal-block">main
+    |---- conf (工程配置文件)
+    |---- static (js，图片等)
+    |---- template (html文件)
+    |---- web (web.py的库文件)
+    |---- config.py (目录，密码等配置)
+    |---- index.py (路由文件)
+</pre>
+
+
 <p>接着就可以开始coding，在web.py中需要指定url路由,当url请求中包含相应关键字时则跳转到相应的class中进行处理。</p>
 <pre class="code literal-block"><span class="n">urls</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s">'/favicon.ico'</span><span class="p">,</span><span class="s">"Ico"</span><span class="p">,</span>
@@ -378,8 +381,8 @@ markdown 3</p>
     <div>
 <p>在linux下查找同名文件，并进行替换的一小点总结，find命令超过我的预期。</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/find-all-same-file-and-replace-then.html#rest_code_cdfee2598de14ed79c666e50df5d64ce-1">1</a></pre></div></td>
-<td class="code"><pre class="code sh"><a name="rest_code_cdfee2598de14ed79c666e50df5d64ce-1"></a>find <span class="si">${</span><span class="nv">WORK_HOME</span><span class="si">}</span> -name <span class="s2">"</span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">"</span> -type f <span class="p">|</span> xargs -i cp -rf <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="o">{}</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/find-all-same-file-and-replace-then.html#rest_code_15fda45228ca41c49ce6040c31006507-1">1</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_15fda45228ca41c49ce6040c31006507-1"></a>find <span class="si">${</span><span class="nv">WORK_HOME</span><span class="si">}</span> -name <span class="s2">"</span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">"</span> -type f <span class="p">|</span> xargs -i cp -rf <span class="si">${</span><span class="nv">filename</span><span class="si">}</span> <span class="o">{}</span>
 </pre></td>
 </tr></table>
 </div>

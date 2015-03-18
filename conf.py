@@ -584,3 +584,7 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite']
 # It can be anything, data, functions, modules, etc.
 
 GLOBAL_CONTEXT = {}
+
+GITHUB_DEPLOY_BRANCH = 'master'
+GITHUB_SOURCE_BRANCH = 'deploy'
+GITHUB_REMOTE_NAME   = 'origin'
