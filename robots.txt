@@ -1,0 +1,4 @@
+Sitemap: http://nicebug.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: nicebug.github.io
